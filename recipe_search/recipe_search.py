@@ -16,7 +16,7 @@ def search_by_name(filename: str, word: str) -> list:
                 i += 1
             
             if word.lower() in name:
-                found_recipes.append(name.title())  
+                found_recipes.append(name.capitalize())  
             i += 1
     
     return found_recipes
@@ -38,7 +38,7 @@ def search_by_time(filename: str, prep_time: int) -> list:
                 i += 1
             
             if time <= prep_time:
-                found_recipes.append(f"{name.title()}, preperation time {time} min")  
+                found_recipes.append(f"{name.capitalize()}, preparation time {time} min")  
             i += 1
     
     return found_recipes
@@ -68,13 +68,13 @@ def search_by_ingredient(filename: str, ingredient: str) -> list:
     return found_recipes
 
 if __name__ == "__main__":
-    #found_recipes = search_by_name("recipes1.txt", "cake")
-    #for recipe in found_recipes:
-        #print(recipe)
+    found_recipes = search_by_name("recipes1.txt", "cake")
+    for recipe in found_recipes:
+        print(found_recipes)
     
-    #found_recipes = search_by_time("recipes1.txt", 20)
-    #for recipe in found_recipes:
-        #print(recipe)
+    found_recipes = search_by_time("recipes1.txt", 20)
+    for recipe in found_recipes:
+        print(found_recipes)
 
     found_recipes = search_by_ingredient("recipes1.txt", "eggs")
     for recipe in found_recipes:
